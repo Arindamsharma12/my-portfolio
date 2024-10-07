@@ -1,0 +1,226 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: black;
+  font-family: 'Josefin Sans';
+}
+
+.navbar{
+  padding: 2%;
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.logo{
+  width: 100px;
+  height:100px;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideRight{
+  0%{
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.navbar ul{
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: end;
+}
+
+.navbar ul li{
+  font-size: 2rem;
+  margin: 0 20px;
+  padding: 20px;
+}
+.navbar ul li a:hover{
+  font-weight: 700;
+  /* background-color: #fff; */
+  text-decoration: underline;
+  font-size: 1.9rem;
+  color: #282828;
+}
+
+.navbar ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+/* Hero Section */
+#home{
+  /* border: 2px solid white; */
+  color: #505050;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Noti{
+  position: absolute;
+  top: 20%;
+  left: 17%;
+  width: 20%;
+  /* margin-bottom: 10%; */
+}
+
+.imgContent{
+  display: flex;
+  width: 50vw;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.profile{
+  width: 500px;
+  height: 500px;
+  animation: zoomIn 1s ease forwards,floatImage 4s ease-in-out infinite;
+  animation-delay: 2s,3s;
+}
+
+@keyframes zoomIn{
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes floatImage{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-24px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.intro{
+  /* border: 2px solid white; */
+  min-height: 30vh;
+  width: 40vw;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  animation: slideRight 1s ease forwards;
+}
+
+.intro h3{
+  font-size: 3rem;
+  margin-bottom: 3%;
+}
+
+.intro h1{
+  font-size: 4rem;
+  margin-bottom: 3%;
+}
+
+.intro p{
+  font-size: 2.5rem;
+}
+
+.intro span{
+  /* border: 2px solid red; */
+  /* background: white; */
+  border-radius: 30px;
+  padding: 2%;
+  color: #673ab7;
+}
+
+.icons{
+  margin-top: 4%;
+  color: #673ab7;
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+}
+
+/* Hamburger Menu */
+.hamNav{
+  display: flex;
+  align-items: center;
+  justify-content:start;
+}
+.hamNav h1{
+  color: white;
+}
+
+/* Responsiveness */
+@media (max-width:1200px){
+  .navbar ul li{
+    margin: 0;
+  }
+  .profile{
+    width: 350px;
+    height: 350px;
+  }
+  .intro{
+    width: 50%;
+  }
+  .intro h3{
+    font-size: 2rem;
+  }
+  .intro h1{
+    font-size: 2.5rem;
+  }
+  .intro p{
+    font-size: 1.5rem;
+  }
+  .Noti{
+    left: 5%;
+    width: 35%;
+  }
+}
+
+@media (max-width:800px){
+  #home{
+    flex-direction: column;
+    gap: 90px;
+    justify-content: start;
+    margin-top: 120px;
+  }
+  .hamNav{
+    justify-content: space-around;
+
+  }
+  .hamNav h1{
+    font-size: 2.3rem;
+  }
+  .logo{
+    width: 70px;
+    height: 70px;
+  }
+  .Noti{
+    left: 10%;
+    top: 15%;
+    width: 70vw;
+  }
+  .intro{
+    width: 80vw;
+  }
+  .profile{
+    width: 300px;
+    height: 300px;
+  }
+  .icons{
+    width: 50vw;
+  }
+}
